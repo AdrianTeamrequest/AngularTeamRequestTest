@@ -1,0 +1,25 @@
+<p>
+  actor works!
+</p>
+<hr>
+<div class = "container">
+    <div class = "row">
+        <div class = "col-xs-6">
+<table *ngIf="actors.length > 0" class="table table-condensed" id="customers" >
+  <tr>
+    <th>Actor Id</th>
+    <th>Nume</th> 
+    <th>Anul-Nasterii</th>
+   
+  </tr>
+  <tr *ngFor="let actor of actors">
+    <td>{{actor.Id_Actor}} </td>
+    <td>{{actor.Nume}}</td> 
+    <td>{{actor.Anul_Nasterii}}</td>
+    
+  </tr>
+
+</table>
+</div>
+</div>
+</div>

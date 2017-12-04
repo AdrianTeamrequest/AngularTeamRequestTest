@@ -1,0 +1,46 @@
+<div class="row" >
+   
+<div class="relative">
+
+
+<table *ngIf="movies != null && movies.length > 0"  id="customers">
+  <tr>
+    
+    <th>Denumire</th> 
+    <th>Anul productiei</th>
+    <th>Genul</th>
+    <th>Nume Actor</th>
+  </tr>
+  <tr *ngFor="let movie of movies"  >
+    
+    <td>{{movie.Denumire}}</td> 
+    <td>{{movie.Anul_Prductiei}}</td>
+    <td>{{movie.Genul}}</td>
+   <td>
+     <ul>
+       <li *ngFor="let actor of movie.Actori" (click)="setSelectedActor(actor, movies)"> {{actor.Nume}}</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+</div>
+
+
+    <div class="absolute" *ngIf="selectedActor != null">
+      
+   <img src="{{selectedActor.imagePath}}" style="max-height:150px">
+  <li>Actorul selectat este : {{selectedActor.Nume}} </li>
+  <li>Nascut la data: {{selectedActor.Anul_Nasterii}}  </li>
+  
+     <div class="menu" >
+  
+    <ul>
+     <h4> Lista de Filme: </h4>
+           <li *ngFor="let selectedActorsMovie of selectedActorsMovies">
+       {{selectedActorsMovie.Denumire}}
+      </li>
+    </ul>
+      </div>
+       </div>
+</div>
+ 
